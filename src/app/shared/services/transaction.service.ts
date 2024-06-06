@@ -7,9 +7,11 @@ import { applicationUrls } from '../urls';
 })
 export class TransactionService {
   constructor(private http: HttpClient) {}
+
   getTransactionList(payload: any) {
     return this.http.get(applicationUrls.transaction + 'list' + payload);
   }
+
   updateTransaction(data: any) {
     return this.http.put(applicationUrls.transaction + 'update', data);
   }

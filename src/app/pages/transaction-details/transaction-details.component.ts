@@ -53,7 +53,6 @@ export class TransactionDetailsComponent {
     });
   }
   ngOnInit() {
-    console.log('fgdg', this.transactionDetails);
     if (this.transactionDetails) {
       this.createForm.patchValue(this.transactionDetails);
     }
@@ -72,7 +71,7 @@ export class TransactionDetailsComponent {
       next: (res: any) => {
         this.updateDetails.emit();
       },
-      error: (err) => {
+      error: (err: Error) => {
         console.log('err', err);
       },
     });

@@ -40,10 +40,10 @@ export class TransactionListComponent {
   ngOnInit() {
     this.getData();
   }
+
   getData() {
     this.transactionService.getTransactionList('').subscribe({
       next: (res: any) => {
-        console.log('res', res);
         this.dataSource = res.data;
       },
       error: (err: any) => {
@@ -51,12 +51,13 @@ export class TransactionListComponent {
       },
     });
   }
+
   viewSingle(data: any) {
     this.showDetails = true;
     this.transactionDetails = data;
   }
+
   updateDetails(e: any) {
-    console.log('e', e);
     this.showDetails = false;
     this.getData();
   }
