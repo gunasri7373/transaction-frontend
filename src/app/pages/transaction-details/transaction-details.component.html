@@ -1,0 +1,79 @@
+<div
+  class="relative flex flex-0 flex-col border-b px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8"
+>
+  <div class="text-4xl font-extrabold tracking-tight">Transaction Details</div>
+</div>
+<div class="">
+  <div class="flex flex-col flex-auto form-Out">
+    <div class="flex-auto">
+      <!-- <div
+        class="flex flex-col sm:flex-row items-center justify-between px-5 bg-primary py-4 bg-light-primary"
+      >
+        <div class="text-xl font-semibold text-white">View Transaction</div>
+        <button
+          (click)="close()"
+          type="button"
+          mat-icon-button
+          matDialogClose
+          class="border-0"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#fff"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div> -->
+
+      <form
+        [formGroup]="createForm"
+        class="flex flex-col create-form px-5 py-12"
+      >
+        <!-- Name , country -->
+        <div class="flex flex-col gt-md:flex-row mb-5">
+          <mat-form-field>
+            <mat-label>Transaction Id</mat-label>
+            <input matInput [formControlName]="'id'" readonly />
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col gt-md:flex-row mb-5">
+          <mat-form-field>
+            <mat-label>Transaction Date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              [formControlName]="'date'"
+              readonly
+            />
+
+            <mat-datepicker-toggle matIconSuffix></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col gt-md:flex-row mb-5">
+          <mat-form-field>
+            <mat-label>Comments</mat-label>
+            <input matInput [formControlName]="'comments'" />
+          </mat-form-field>
+        </div>
+
+        <div class="mt-3">
+          <button
+            type="submit"
+            class="px-6 py-2.5 mat-focus-indicator rounded-md mat-flat-button mat-button-base bg-primary text-white"
+            mat-flat-button
+            (click)="save()"
+          >
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
